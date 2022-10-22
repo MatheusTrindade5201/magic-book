@@ -15,6 +15,14 @@ const Page = styled.div`
         font-size: 2rem
     }
     
+    .list{
+        margin-top: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: space-around
+    }
+    
 `
 
 export default Page
