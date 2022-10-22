@@ -5,7 +5,7 @@ const Card = (props) => {
     return(
         <DivCard>
             <div className="card" style={{backgroundImage: `url(${props.image})`}}>
-                    <p className="card__header"> <img className="card__icon" src={props.icon} /> {props.name}</p>
+                    <p className="card__header"> <img className="card__icon" alt="house emblem" src={props.icon} /> {props.name}</p>
             </div>
             <div className="card card__infos">
                 <p>Specie: {props.species}</p>

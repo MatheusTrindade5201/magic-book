@@ -34,21 +34,20 @@ export const DivCard = styled.div`
         overflow: hidden;
         position: absolute;
         top: 0;
-        transform:translateX(.2rem);
+        transform:translateX(.1rem);
         z-index: -1;
         transition: .3s;
         width:10px;
         height: 10px;
         display: flex;
         flex-direction: column;
-        gap: .5rem
+        gap: .5rem;
     }
 
     .card:hover+.card__infos, .card__infos:hover {
-        transform: translateX(rem);
         z-index: 2;
         background-color: rgb(0,0,0,.9);
-        padding: 1rem;
+        padding: .5rem;
         width: 100%;
         height: 100%
     }
