@@ -20,5 +20,20 @@ export const HeaderPage = styled.header`
         font-family: 'Dancing Script', cursive;
         color: #fff
     }
+    button {
+        background-color: unset;
+        border:thick 1px;
+        border-color:transparent;
+        border-radius: 10px 0 10px 0; 
+        padding: .3rem;
+        font-family: 'Dancing Script', cursive;
+        font-size: 1rem;
+        color: #fff;
+        transition: .2s        
+    }
+    button:hover {
+        cursor: pointer;
+        border-color:#fff;
+    }
 `;
 

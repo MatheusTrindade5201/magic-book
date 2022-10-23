@@ -5,8 +5,8 @@ const Page = styled.div`
 
     margin: 0 10vw; 
     color: #fff;
-    height:100vh;
-    background-color: rgb(217,217,217,.55);
+    height:100%;
+    background-color: ${props => props.theme.settings.bg__color};
 
     .page__text{
         padding-top: .8rem;

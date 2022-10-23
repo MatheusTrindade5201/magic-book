@@ -19,7 +19,7 @@ const Home = () => {
     if(!list){
         return(
             <div>
-            <Header />
+            {/* <Header /> */}
             <Page>
                 <div className="page__text">
                     <h1>Magic Book</h1>
@@ -33,7 +33,7 @@ const Home = () => {
     }
     return (
         <div>
-            <Header />
+            {/* <Header /> */}
             <Page>
                 <div className="page__text">
                     <h1>Magic Book</h1>
