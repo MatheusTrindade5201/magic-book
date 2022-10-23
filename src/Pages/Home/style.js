@@ -12,7 +12,8 @@ const Page = styled.div`
         padding-top: .8rem;
         text-align:center;
         font-family: 'Dancing Script', cursive;
-        font-size: 2rem
+        font-size: 2rem;
+        color: ${props => props.theme.settings.title__color}
     }
     
     .list{

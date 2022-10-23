@@ -4,12 +4,16 @@ export const DivCard = styled.div`
     width:150px;
     position: relative;
 
+    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+    font-family: 'Roboto', sans-serif;
+
     .card__header{
         display: flex;
         align-items:center;
         gap: .5rem;
         background-color: rgb(0,0,0,.5);
         padding: .3rem;
+        width: 100%
     }
 
     .card__icon {
@@ -27,7 +31,9 @@ export const DivCard = styled.div`
         height: 200px;
         background-repeat: no-repeat;
         background-size: cover;
-        z-index: 1
+        z-index: 1;
+        display: flex;
+        align-items:flex-end
     }
 
     .card__infos {
@@ -41,15 +47,19 @@ export const DivCard = styled.div`
         height: 10px;
         display: flex;
         flex-direction: column;
-        gap: .5rem;
+        gap: 1rem;
+        font-size:1rem;
     }
 
     .card:hover+.card__infos, .card__infos:hover {
         z-index: 2;
         background-color: rgb(0,0,0,.9);
         padding: .5rem;
-        width: 100%;
-        height: 100%
+        width: 150px;
+        height: 120%;
+        align-items: flex-start;
+        box-sizing:content-box
+
     }
 
     li{
