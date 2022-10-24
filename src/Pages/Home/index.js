@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react"
 import Card from "../../Components/Card";
-import Header from "../../Components/Header"
 import Search from "../../Components/Search";
 import api from "../../Services/api";
-import Page from './style'
+import Page from '../style'
 
 const Home = () => {
 
