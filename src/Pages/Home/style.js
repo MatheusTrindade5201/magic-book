@@ -17,7 +17,7 @@ const Page = styled.div`
     }
     
     .list{
-        margin-top: 2rem;
+        margin: 2rem 2vw 0 2vw;
         display: flex;
         flex-wrap: wrap;
         gap: 2rem;

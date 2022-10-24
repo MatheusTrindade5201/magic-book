@@ -33,7 +33,8 @@ export const DivCard = styled.div`
         background-size: cover;
         z-index: 1;
         display: flex;
-        align-items:flex-end
+        align-items:flex-end;
+        outline: 6px solid rgb(0,0,0,.5)
     }
 
     .card__infos {
@@ -56,7 +57,7 @@ export const DivCard = styled.div`
         background-color: rgb(0,0,0,.9);
         padding: .5rem;
         width: 150px;
-        height: 120%;
+        height:fit-content;
         align-items: flex-start;
         box-sizing:content-box
 
