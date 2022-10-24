@@ -18,6 +18,7 @@ const Page = styled.div`
     
     .list{
         margin: 2rem 2vw 0 2vw;
+        padding-bottom: 5rem;
         display: flex;
         flex-wrap: wrap;
         gap: 2rem;
