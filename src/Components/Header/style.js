@@ -4,10 +4,11 @@ export const HeaderPage = styled.header`
     @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
 
     background-color: rgb(0,0,0,.54);
-    padding: .51rem 0;
+    padding: .51rem 1rem;
     display:flex;
     align-items:center;
     gap: 5rem;
+    justify-content: space-between;
 
     nav{
         display:flex;
