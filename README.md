@@ -1,70 +1,141 @@
-# Getting Started with Create React App
+# Magic Book
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Esse é um projeto temático de Harry Potter desenvolvido com React.js Styled-components, que teve como objetivo exercitar o uso da biblioteca de estilos.
+  
+- [x] Visualizar lista de personagens.
+- [x] Mudar de páginas com diferentes filtros.
+- [x] Pesquisar um personagem em especifico.
+- [x] Trocar o tema da página.
+- [x] Responsivo 
 
-## Available Scripts
 
-In the project directory, you can run:
+  - Link do Site-solução: 
 
-### `npm start`
+## Preview do produto final
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Detalhes do projeto: 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### O projeto foi desenvolvido com react-router-dom para a roteirização das páginas
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+const AppRouter = () => {
+    return (
+        <Routes>
+            <Route element={<Home />} path='/' />
+            <Route element={<Students />} path='/students' />
+            <Route element={<Staff />} path='/staff' />
+            <Route element={<SpellBook />} path='/spell-book' />
+        </Routes>
+    )
+}
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Para a estilização, foi utilizado o style-components
 
-### `npm run eject`
+##### Estilo global:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+const GlobalStyle = createGlobalStyle`
+   * {
+        margin: 0;
+        padding: 0;
+    }
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    body {
+        margin: 0;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background-image: url(${props => props.theme.settings.bg__image});
+        background-size:  100vw 100vh;
+        background-repeat: no-repeat;
+        background-attachment: fixed
+    }
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+export default GlobalStyle
+```
 
-## Learn More
+### Troca de tema
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Ainda com o styled-components, foi feito a troca de temas da pagina de forma dinamica
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+##### dark:
 
-### Code Splitting
+```
+export default {
+    title: 'dark',
+    settings: {
+        bg__image: require('../../image/hogwarts-b.jpg'),
+        bg__color: 'rgb(217,217,217,.55)',
+        text: '#fff',
+        title__color: 'rgb(0, 0, 0,.6)',
+        spell_card: 'rgb(0, 0, 0,.8)'
+    }
+}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+##### light:
 
-### Analyzing the Bundle Size
+```
+export default {
+    title: 'light',
+    settings: {
+        bg__image: require('../../image/hogwarts-b-light.jpg'),
+        bg__color: 'rgb(0,0,0,.55)',
+        text: '#fff',
+        title__color: '#fff',
+        spell_card: 'rgb(255, 228, 179,.3)'
+    }
+}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+#### Lógica de troca de tema:
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```
+function App() {
 
-### Advanced Configuration
+  const [theme, setTheme] = useState(light);
+  const [themeName, setThemeName] = useState('Nox')
+  const [menu, setMenu] = useState('')
+  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+  return (
+    <ThemeProvider theme={theme}>
+      <BrowserRouter>
+        <Header
+        menuMobile={menu} 
+        themeName={themeName}
+        toggleTheme={()=> {
+          setTheme(theme.title == 'light' ? dark : light);
+          setThemeName(themeName == 'Nox' ? 'Lumos' : 'Nox')
+        }}
+        menuOpener={() => setMenu(menu == '' ? 'activated ':'') }/>
+        <AppRouter />
+        <GlobalStyle />
+      </BrowserRouter>
+    </ThemeProvider>
+  );
+}
 
-### Deployment
+export default App;
+```
+Nos trecho acima podemos ver um useState sendo usado para controlar o tema atual, passando para todas as páginas através do componente do styled-components ```<ThemeProvider/>```, e sendo trocado através de um botão com a lógica atribuida na propriedade toggleTheme do Header.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+#### Desenvolvimento 
+
+Caso queira fazer o clone do repositório, por favor usar o comando abaixo para download das dependencias:
+```
+npm intall
+```
+
+Será necessário criar suas proprias chaves para o firebase para configuração.
+
