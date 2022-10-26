@@ -15,7 +15,7 @@ const Home = () => {
         api.get('/characters')
         .then((response)=> setList(response.data));
         console.log(list);
-    },[list])
+    },[])
 
     if(!list){
         return(

@@ -11,18 +11,20 @@ function App() {
 
   const [theme, setTheme] = useState(light);
   const [themeName, setThemeName] = useState('Nox')
-
+  const [menu, setMenu] = useState('')
   
 
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
-        <Header 
+        <Header
+        menuMobile={menu} 
         themeName={themeName}
         toggleTheme={()=> {
           setTheme(theme.title == 'light' ? dark : light);
           setThemeName(themeName == 'Nox' ? 'Lumos' : 'Nox')
-        }}/>
+        }}
+        menuOpener={() => setMenu(menu == '' ? 'activated ':'') }/>
         <AppRouter />
         <GlobalStyle />
       </BrowserRouter>

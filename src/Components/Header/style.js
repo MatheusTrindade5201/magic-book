@@ -2,17 +2,27 @@ import styled from "styled-components";
 
 export const HeaderPage = styled.header`
     @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
-
-    background-color: rgb(0,0,0,.54);
-    padding: .51rem 1rem;
-    display:flex;
-    align-items:center;
-    gap: 5rem;
-    justify-content: space-between;
+    div{
+        background-color: rgb(0,0,0,.54);
+        padding: .51rem 1rem;
+        display:flex;
+        align-items:center;
+        gap: 5rem;
+        justify-content: space-between;
+    }
+    
 
     nav{
         display:flex;
         gap: 2rem;
+    }
+
+    .mobile{
+        display: none
+    }
+
+    .mobile-button {
+        display: none
     }
 
     .NavLink {
@@ -35,6 +45,43 @@ export const HeaderPage = styled.header`
     button:hover {
         cursor: pointer;
         border-color:#fff;
+    }
+
+    @media screen and (max-width: 900px) {
+        position:relative;  
+
+        div{
+            gap: 0;
+        }
+
+        .desktop{
+            display:none
+        }
+
+        .header__logo {
+            width: 50%;
+            max-width: 250px
+        }
+
+        .mobile-button {
+            display:block;
+            font-size: 2rem;
+            order: 2;
+            color: ${props => props.theme.settings.text}
+        }
+
+        .activated{
+            z-index: 2;
+            position:absolute;
+            width: 100%;
+            background-color: rgb(0,0,0,.9);
+            display:flex;
+            flex-direction: column;
+            text-align:center;
+            padding: 2rem;
+            box-sizing:border-box
+        }
+
     }
 `;
 
