@@ -18,10 +18,10 @@ const Header = (props) => {
                 <button onClick={props.toggleTheme}>{props.themeName}</button>
             </div> 
                 <nav className={props.menuMobile + 'mobile'}>
-                    <NavLink className='NavLink' to='/'>Home</NavLink>
-                    <NavLink className='NavLink' to='/students'>Students</NavLink>
-                    <NavLink className='NavLink' to='/staff'>Staff</NavLink>
-                    <NavLink className='NavLink' to='/spell-book'>Spell Book</NavLink>
+                    <NavLink onClick={props.closeMenu} className='NavLink' to='/'>Home</NavLink>
+                    <NavLink onClick={props.closeMenu} className='NavLink' to='/students'>Students</NavLink>
+                    <NavLink onClick={props.closeMenu} className='NavLink' to='/staff'>Staff</NavLink>
+                    <NavLink onClick={props.closeMenu} className='NavLink' to='/spell-book'>Spell Book</NavLink>
                 </nav> 
         </HeaderPage>
         
