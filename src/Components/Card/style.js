@@ -66,4 +66,4 @@ export const DivCard = styled.div`
     li{
         list-style: none
     }
-`
+`;
