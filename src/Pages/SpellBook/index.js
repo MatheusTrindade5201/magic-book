@@ -8,7 +8,7 @@ import Page from '../style'
 const SpellBook = () => {
 
     const [list, setList] = useState(false);
-    const [spellName, setSpellName] = useState('')
+    const [spellName, setSpellName] = useState('');
 
     
 

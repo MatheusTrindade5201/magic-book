@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import Card from "../../Components/Card";
 import Search from "../../Components/Search";
 import api from "../../Services/api";
-import Page from '../style.js'
+import Page from '../style'
 
 const Home = () => {
 

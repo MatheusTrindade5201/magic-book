@@ -25,6 +25,6 @@ const Page = styled.div`
         justify-content: space-around
     }
     
-`
+`;
 
 export default Page

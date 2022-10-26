@@ -7,7 +7,7 @@ import Page from '../style'
 const Staff = () => {
 
     const [list, setList] = useState(false);
-    const [characterName, setCharacterName] = useState('')
+    const [characterName, setCharacterName] = useState('');
 
     
 

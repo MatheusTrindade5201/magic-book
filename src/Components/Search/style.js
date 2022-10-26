@@ -14,4 +14,4 @@ export const SearchDiv = styled.div`
         font-weight: 700;
         
     }
-`
+`;
