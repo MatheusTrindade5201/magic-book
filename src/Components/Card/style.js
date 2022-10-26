@@ -4,9 +4,6 @@ export const DivCard = styled.div`
     width:150px;
     position: relative;
 
-    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-    font-family: 'Roboto', sans-serif;
-
     .card__header{
         display: flex;
         align-items:center;

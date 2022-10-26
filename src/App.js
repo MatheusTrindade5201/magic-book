@@ -26,8 +26,8 @@ function App() {
         }}
         menuOpener={() => setMenu(menu == '' ? 'activated ':'') }/>
         <AppRouter />
-        <GlobalStyle />
       </BrowserRouter>
+        <GlobalStyle />
     </ThemeProvider>
   );
 }

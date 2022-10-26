@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const SpellArticle = styled.article`
-    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
 
     background-color: ${props => props.theme.settings.spell_card};
     background-size: cover;
