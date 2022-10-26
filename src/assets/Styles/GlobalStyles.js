@@ -16,6 +16,6 @@ const GlobalStyle = createGlobalStyle`
         background-attachment: fixed
     }
 
-`
+`;
 
 export default GlobalStyle
