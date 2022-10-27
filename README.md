@@ -9,11 +9,13 @@ Esse é um projeto temático de Harry Potter desenvolvido com React.js Styled-co
 - [x] Responsivo 
 
 
-  - Link do Site-solução: 
+  - Link do Site: https://magic-book.vercel.app/ 
 
 ## Preview do produto final
 
+![Captura de tela 2022-10-26 205514](https://user-images.githubusercontent.com/104238483/198160286-3feead42-d86d-4a3b-af8a-02812a1dd77a.png)
 
+![Captura de tela 2022-10-26 205545](https://user-images.githubusercontent.com/104238483/198160296-8034d15c-365c-47c9-9814-f8fc021b1053.png)
 
 
 
